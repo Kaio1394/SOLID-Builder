@@ -1,8 +1,8 @@
 package br.com.builder.builders;
 
-import br.com.builder.cars.Car;
 import br.com.builder.cars.Truck;
 import br.com.builder.components.CarType;
+import br.com.builder.components.Color;
 import br.com.builder.components.Engine;
 import br.com.builder.components.Transmission;
 
@@ -11,7 +11,7 @@ public class TruckBuilder implements IBuilder{
 	private int seats;
 	private Engine engine;
 	private Transmission transmission;
-	
+	private Color color;
 	
 	@Override
 	public void setCarType(CarType type) {
@@ -37,8 +37,15 @@ public class TruckBuilder implements IBuilder{
 		this.engine = engine;
 	}
 	
-	public Truck getResult() {
-		return new Truck(carType, seats, engine, transmission);
+	@Override
+	public void setColor(Color color) {
+		// TODO Auto-generated method stub
+		this.color = color;
 	}
+	
+	public Truck getResult() {
+		return new Truck(carType, seats, engine, transmission, color);
+	}
+
 
 }

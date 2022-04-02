@@ -1,6 +1,7 @@
 package br.com.builder.cars;
 
 import br.com.builder.components.CarType;
+import br.com.builder.components.Color;
 import br.com.builder.components.Engine;
 import br.com.builder.components.Transmission;
 
@@ -10,12 +11,14 @@ public class Car {
 	private final int seats;
 	private final Engine engine;
 	private final Transmission transmission;
+	private final Color color;
 	
-	public Car(CarType type, int seats, Engine engine, Transmission transmission) {
+	public Car(CarType type, int seats, Engine engine, Transmission transmission, Color color) {
 		this.type = type;
 		this.seats = seats;
 		this.engine = engine;
 		this.transmission = transmission;
+		this.color = color;
 	}
 
 	public CarType getType() {
@@ -36,8 +39,11 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [type=" + type + ", seats=" + seats + ", engine=" + engine + ", transmission=" + transmission + "]";
+		return "Car [type=" + type + ", seats=" + seats + ", engine=" + engine + ", transmission=" + transmission
+				+ ", color=" + color + "]";
 	}
+
+	
 	
 	
 }
